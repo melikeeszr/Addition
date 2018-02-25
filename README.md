@@ -1,2 +1,2 @@
-# hexAddition
-Kodumuzun amacı hexadecimal olarak girilen sayıları sayının uzunluk ve basamak sınırı olmadan toplayabilmek
+# Addition
+Kodumuzun amacı girilen sayıları (long int benzeri tanımlamaların yetersiz kaldığı) uzunluk ve basamak sınırı düşünülmeden toplayabilmek
