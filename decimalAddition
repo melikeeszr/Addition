@@ -1,0 +1,53 @@
+print("Merhaba toplanacak 2 sayiyi giriniz")
+s1 = input("1.sayi:")
+s2 = input("2.sayi:")
+                            #s1 = 15                           #s2 = 19
+str1 = str(s1)
+str2 = str(s2)
+
+len1 = len(str1)
+len2 = len(str2)
+elde = 0
+
+d= ''
+if(len2>= len1):
+    i = len1 - 1
+
+if(len1>len2):
+    x = str1
+    str1= str2
+    str2 = x
+    len1 = len(str1)
+    len2 = len(str2)
+    i = len1 - 1
+#diff = len1 - len2
+
+diff = abs(len2 - len1)
+while i>=0 and len2>= len1:
+    toplam = int(str1[i]) + int(str2[i+diff]) + elde
+    elde = 0
+
+    if (toplam >= 10):
+        elde = int(toplam / 10)
+        toplam = toplam % 10
+        c = str(toplam)
+
+    if (toplam < 10):
+        a = str(toplam)
+        d += str(a)
+
+    i = i - 1
+
+i= abs(len2-len1)-1
+
+while i>=0:
+    toplam = int(str2[i]) + elde
+    b = str(toplam)
+    d += str(b)
+    i = i-1
+    if(elde>0):
+        elde = elde -1
+if(elde>=0):
+    d+= str(elde)
+
+print(d[::-1])
