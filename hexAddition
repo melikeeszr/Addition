@@ -1,0 +1,67 @@
+print("Merhaba toplanacak 2 hexadecimal sayiyi giriniz")
+s1 = input("1.sayi:")
+s2 = input("2.sayi:")
+
+str1 = str(s1)
+str2 = str(s2)
+#astr1 = hex(str1)
+#astr2=  hex(str1)
+
+len1 = len(str1)
+len2 = len(str2)
+elde = 0
+
+d= ''
+if(len2>= len1):
+    i = len1 - 1
+
+if(len1>len2):
+    x = str1
+    str1 = str2
+    str2 = x
+    len1 = len(str1)
+    len2 = len(str2)
+    i = len1 - 1
+
+
+diff = abs(len2 - len1)
+
+while i>=0 and len2>= len1:
+
+
+    toplam= ((int(str1[i],16)) + (int(str2[i+diff],16)) + (elde))
+   # htoplam = hex(toplam)
+    elde = 0
+
+    if (toplam >= (16)):
+        elde = int(toplam / (16))
+        toplam = toplam % (16)
+        #c = str(toplam)
+
+    if (toplam < 16):
+        if(toplam>=10):
+
+            a = hex(toplam)
+            a2 = a[2:]
+            d += str(a2)
+
+        else:
+            a = str(toplam)
+            d += str(a)
+
+    i = i - 1
+
+i= abs(len2-len1)-1
+#kalan basamaklar varsa onlari asagiya indiriyoruz
+while i>=0:
+    toplam = int(str2[i],16) + elde
+    b = hex(toplam)
+    b = b[2:]
+    d += str(b)
+    i = i-1
+    if (elde > 0):
+        elde = elde - 1
+if(elde>0):
+    d+= str(elde)
+
+print(d[::-1])
